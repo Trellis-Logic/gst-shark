@@ -132,6 +132,8 @@ do
     # Get data columns
     awk '{print $1,$10,$13,$16}' ${tracer}.log > ${tracer}.mat
     # Create plots
+    echo "Capture time,element,Time(ns)" > ${tracer}.csv
+    awk '{print $1,",",$10,$13}' ${tracer}.log >> ${tracer}.csv
 done
 
 # Loop through the tracer list 1
